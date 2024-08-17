@@ -1,18 +1,45 @@
 input[type="number"] {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  .PageLoader{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.PageLoader {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.collapsmenu {
+  width: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.openmenu{
+  width: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 230px;
+}
+
+.headeropen{
+  display: block;
+}
+
+.collapsmenu svg{
+  transform: rotate(0deg)
+}
+
+.openmenu svg{
+  transform: rotate(180deg)
+}
+
