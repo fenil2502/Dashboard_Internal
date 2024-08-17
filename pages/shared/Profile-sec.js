@@ -7,9 +7,9 @@ import {
     faLinkedinIn,
     faWhatsapp,
   } from "@fortawesome/free-brands-svg-icons";
-  import {
-    RiMailUnreadLine,
-  } from "react-icons/ri";
+  // import {
+  //   RiMailUnreadLine,
+  // } from "react-icons/ri";
 
 function ProfileSec() {
 
@@ -23,7 +23,7 @@ function ProfileSec() {
           <h6>Developer, Designer & Analyst</h6>
         </div>
         <div className="user-mail">
-          <RiMailUnreadLine />
+          {/* <RiMailUnreadLine /> */}
           <Link
             href="mailto:patelvirenb602@gmail.com"
             rel="noopener noreferrer"
