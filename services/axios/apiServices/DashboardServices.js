@@ -1,4 +1,4 @@
-import { AddEditNewTask, AddToCartProductById, AddUser, EditUserDetails, GetAllProducts, GetDashboardDetailsById, GetProductDetailsByProductId, GetTaskbyUserId, ProductPayment, StoreBase64Image, UserLogin } from "../ApiEndPoints";
+import { AddEditNewTask, AddToCartProductById, AddUser, EditUserDetails, GetAllProducts, GetDashboardDetailsById, GetProductDetailsByProductId, GetTaskbyUserId, ProductPayment, SendInquiry, StoreBase64Image, UserLogin } from "../ApiEndPoints";
 import { axiosGetAuthorize, axiosGetMultiParams, axiosPostAuthorize, axiosPostWithoutEncryption } from "../AxiosRequests";
 
 
@@ -36,5 +36,8 @@ export default class DashboardServices {
     }
     async productPayment(request) {
         return axiosPostAuthorize(ProductPayment, request);
+    }
+    async sendInquiry(request) {
+        return axiosPostAuthorize(SendInquiry, request);
     }
 }

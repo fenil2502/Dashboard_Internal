@@ -21,6 +21,8 @@ export const GetAllProducts = "DashBoard/GetAllProducts";
 export const GetProductDetailsByProductId = "DashBoard/GetProductDetailsByProductId?id={0}&id2={1}";
 export const AddToCartProductById = "DashBoard/AddToCartProductById?id={0}&id1={1}";
 export const ProductPayment = "DashBoard/ProductPayment";
+export const SendInquiry = "DashBoard/SendInquiry";
+
 
 // export const GetWorkshopDetailsByEventId = "WebEntryManagement/GetWorkshopDetailsByEventId?id={0}";
 // export const GetConferenceDetailByEventId = "WebEntryManagement/GetConferenceDetailByEventId";

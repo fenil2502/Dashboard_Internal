@@ -285,6 +285,8 @@ class Cart extends Component {
       request.userId = this.state.taskDetails.userId;
       this.dashboardServices.productPayment(request).then((response) => {
         if (response.statusCode === 200 && response.responseItem != null) {
+          this.SwalServices.Success('Your payment has been successfully processed. Please find the invoice attached in your email.')
+          this.setState({ paymentModel: false });
           this.setState({ pageLoading: false });
         } else {
           this.SwalServices.Error(response.message);
