@@ -30,4 +30,4 @@ export const value4 = 'Token101';
 
 export const value5 = 'BasicToken101';
 
-export const SGTechWebUrl = 'http://localhost:8001/';
+export const SGTechWebUrl = 'https://dashboard-internal-ten.vercel.app/';
