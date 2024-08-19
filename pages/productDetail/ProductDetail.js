@@ -148,6 +148,7 @@ class ProductDetail extends Component {
               vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
               imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
               mollis pretium. Integer tincidunt. */}
+              {this.state.productDetail.productDescription2 !== '' ? this.state.productDetail.productDescription2 : null}
             </p>
           </div>
         </div>
