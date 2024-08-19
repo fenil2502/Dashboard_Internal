@@ -17,7 +17,7 @@ export default function TaskList(props) {
         setModalOpen={props.setOpenModal}
       >
         <div className="paymentpage">
-          <form className="payment">
+          <div className="payment">
             {props.userDetails.isPaymentPopUpActive === false ? (
               <div className="buyer-details">
                 <h2>Buyer Information</h2>
@@ -131,7 +131,7 @@ export default function TaskList(props) {
                 <button onClick={props.productPayment}>Pay</button>
               </div>
             )}
-          </form>
+          </div>
         </div>
       </ModalBasic>
     </>
