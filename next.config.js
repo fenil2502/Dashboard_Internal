@@ -28,6 +28,7 @@ module.exports = {
       { source: '/product', destination: '/product/Product' },
       { source: '/productDetail', destination: '/productDetail/ProductDetail' },
       { source: '/cart', destination: '/cart/Cart' },
+      { source: '/orders', destination: '/orders/Orders' },
       { source: '/payment', destination: '/payment/Payment' },
     ];
   },

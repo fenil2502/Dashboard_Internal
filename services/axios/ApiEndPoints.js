@@ -19,10 +19,11 @@ export const AddEditNewTask = "DashBoard/AddEditNewTask";
 export const GetTaskbyUserId = "DashBoard/GetTaskbyUserId?id={0}&text={1}";
 export const GetAllProducts = "DashBoard/GetAllProducts";
 export const GetProductDetailsByProductId = "DashBoard/GetProductDetailsByProductId?id={0}&id2={1}";
-export const AddToCartProductById = "DashBoard/AddToCartProductById?id={0}&id1={1}";
+export const AddToCartProductById = "DashBoard/AddToCartProductById?id={0}&id1={1}&id3={2}";
 export const ProductPayment = "DashBoard/ProductPayment";
 export const SendInquiry = "DashBoard/SendInquiry";
-
+export const GetAllRecentOrdersById = "DashBoard/GetAllRecentOrdersById?id={0}";
+export const GetPDF = "DashBoard/GetPDF?type={0}&&fileName={1}"
 
 // export const GetWorkshopDetailsByEventId = "WebEntryManagement/GetWorkshopDetailsByEventId?id={0}";
 // export const GetConferenceDetailByEventId = "WebEntryManagement/GetConferenceDetailByEventId";

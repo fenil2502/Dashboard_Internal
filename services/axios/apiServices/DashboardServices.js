@@ -1,5 +1,5 @@
-import { AddEditNewTask, AddToCartProductById, AddUser, EditUserDetails, GetAllProducts, GetDashboardDetailsById, GetProductDetailsByProductId, GetTaskbyUserId, ProductPayment, SendInquiry, StoreBase64Image, UserLogin } from "../ApiEndPoints";
-import { axiosGetAuthorize, axiosGetMultiParams, axiosPostAuthorize, axiosPostWithoutEncryption } from "../AxiosRequests";
+import { AddEditNewTask, AddToCartProductById, AddUser, EditUserDetails, GetAllProducts, GetAllRecentOrdersById, GetDashboardDetailsById, GetPDF, GetProductDetailsByProductId, GetTaskbyUserId, ProductPayment, SendInquiry, StoreBase64Image, UserLogin } from "../ApiEndPoints";
+import { axiosGetAuthorize, axiosGetFileAuthorizeblob, axiosGetMultiParams, axiosGetMultiParamsWithOutEncryption, axiosPostAuthorize, axiosPostWithoutEncryption } from "../AxiosRequests";
 
 
 export default class DashboardServices {
@@ -39,5 +39,11 @@ export default class DashboardServices {
     }
     async sendInquiry(request) {
         return axiosPostAuthorize(SendInquiry, request);
+    }
+    async getAllRecentOrdersById(request) {
+        return axiosGetAuthorize(GetAllRecentOrdersById, request);
+    }
+    async getPDF(request) {
+        return axiosGetMultiParamsWithOutEncryption(GetPDF, request);
     }
 }

@@ -75,6 +75,13 @@ export const Routes = {
     isEncryptParams: false,
   },
 
+  Orders: {
+    rawPath: "/orders/Orders",
+    urlPath: "/orders",
+    isQueryParams: true,
+    isEncryptParams: false,
+  },
+
   Payment: {
     rawPath: "/payment/Payment",
     urlPath: "/payment",

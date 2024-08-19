@@ -23,6 +23,7 @@ class Product extends Component {
     this.SwalServices = new SwalServices();
     this.dashboardServices = new DashboardServices();
     this.state = {
+      userId : 0,
       productCatagoryOptions: [
         { id: 1, name: "Electronics" },
         { id: 2, name: "Clothing" },
@@ -42,7 +43,9 @@ class Product extends Component {
     let details = getAuthProps();
     if (details != undefined) {
       if (details.userId != undefined && details.userId > 0) {
-        this.getAllProducts();
+        this.setState({ userId : details.userId },() => {
+          this.getAllProducts();
+        })
       } else {
         Navigate(Routes.signIn);
       }
@@ -82,6 +85,7 @@ class Product extends Component {
       request.productCatagory = "";
     }
     request.isAddedToCart = 0;
+    request.userId = this.state.userId
     this.dashboardServices.getAllProducts(request).then((response) => {
       if (response.statusCode === 200 && response.responseItem != null) {
         let details = response.responseItem.responseContent;
@@ -122,6 +126,10 @@ class Product extends Component {
               />
             </div>
           </div>
+          <button className="prm-blue" onClick={() => Navigate(Routes.Orders)}>
+            <FontAwesomeIcon icon={faBagShopping} />
+            View Orders
+          </button>
           <button className="prm-blue" onClick={() => Navigate(Routes.Cart)}>
             <FontAwesomeIcon icon={faBagShopping} />
             View cart<span className="products-numbers">

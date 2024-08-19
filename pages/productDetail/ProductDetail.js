@@ -21,6 +21,7 @@ class ProductDetail extends Component {
     this.dashboardServices = new DashboardServices();
     this.state = {
       userId: 0,
+      productId : 0,
       productDetail: {
         isAddedToCart: false,
         productCategory: "",
@@ -39,30 +40,33 @@ class ProductDetail extends Component {
     let routeParam = GetRouteParams(true).productId;
     let details = getAuthProps();
     if (details != undefined) {
+      if (routeParam) {
+        let productId = Number(routeParam);
+        if (productId) {
+          this.setState({ productId : productId })
+          // this.getProductDetailsByProductId(productId);
+        } else {
+          Navigate(Routes.signIn);
+        }
+      }
       if (details.userId != undefined && details.userId > 0) {
-        this.setState({ userId: details.userId });
+        let userId = details.userId
+        this.setState({ userId: userId },() => {
+          this.getProductDetailsByProductId();
+        });
       } else {
         Navigate(Routes.signIn);
       }
     } else {
       Navigate(Routes.signIn);
     }
-    if (routeParam) {
-      let productId = Number(routeParam);
-      if (productId) {
-        this.getProductDetailsByProductId(productId);
-      } else {
-        Navigate(Routes.signIn);
-      }
-    }
   }
 
-  getProductDetailsByProductId = (id) => {
-    let request = [id, this.state.userId]
+  getProductDetailsByProductId = () => {
+    let request = [this.state.productId, this.state.userId]
     this.dashboardServices.getProductDetailsByProductId(request).then((response) => {
       if (response.statusCode === 200 && response.responseItem != null) {
         let details = response.responseItem.responseContent;
-        console.log(details);
         this.setState({ productDetail: details });
       } else {
         this.swalServices.Error(response.message);
@@ -72,7 +76,7 @@ class ProductDetail extends Component {
   };
 
   addToCartProductById = () => {
-    let id = [this.state.productDetail.productId, true];
+    let id = [this.state.productDetail.productId, true, this.state.userId];
     this.dashboardServices.addToCartProductById(id).then((response) => {
       if (response.statusCode === 200 && response.responseItem != null) {
         let details = response.responseItem.responseContent;

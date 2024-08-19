@@ -130,6 +130,7 @@ class Cart extends Component {
       request.productCatagory = "";
     }
     request.isAddedToCart = 0;
+    request.userId = this.state.taskDetails.userId
     this.dashboardServices.getAllProducts(request).then((response) => {
       if (response.statusCode === 200 && response.responseItem != null) {
         let details = response.responseItem.responseContent.filter(
@@ -222,7 +223,7 @@ class Cart extends Component {
   };
 
   addToCartProductById = (productId) => {
-    let id = [productId, false];
+    let id = [productId, false, this.state.userDetails.userId];
     this.dashboardServices.addToCartProductById(id).then((response) => {
       if (response.statusCode === 200 && response.responseItem != null) {
         let details = response.responseItem.responseContent;
