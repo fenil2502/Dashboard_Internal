@@ -284,10 +284,10 @@ class TaskList extends Component {
                         : "low-priority"
                     }`}
                   >
-                    <div>{details.taskName}</div>
-                    <div>{details.taskDescription}</div>
-                    <div>{details.taskType}</div>
-                    <div>{details.taskPriority}</div>
+                    <h5>{details.taskName}</h5>
+                    <p>{details.taskDescription}</p>
+                    <p><strong>Type:</strong> {details.taskType}</p>
+                    <p><strong>Priority:</strong> {details.taskPriority}</p>
                   </div>
                 ))
               : null}
@@ -299,7 +299,7 @@ class TaskList extends Component {
                   <div
                     key={key}
                     onClick={() => this.editTask(details)}
-                    className={`mt-2 ${
+                    className={`mt-2 task-box ${
                       details.taskPriority === "High"
                         ? "high-priority"
                         : details.taskPriority === "Medium"
@@ -307,10 +307,10 @@ class TaskList extends Component {
                         : "low-priority"
                     }`}
                   >
-                    <div>{details.taskName}</div>
-                    <div>{details.taskDescription}</div>
-                    <div>{details.taskType}</div>
-                    <div>{details.taskPriority}</div>
+                    <h5>{details.taskName}</h5>
+                    <p>{details.taskDescription}</p>
+                    <p><strong>Type:</strong> {details.taskType}</p>
+                    <p><strong>Priority:</strong> {details.taskPriority}</p>
                   </div>
                 ))
               : null}
@@ -322,7 +322,7 @@ class TaskList extends Component {
                   <div
                     key={key}
                     onClick={() => this.editTask(details)}
-                    className={`mt-2 ${
+                    className={`mt-2 task-box ${
                       details.taskPriority === "High"
                         ? "high-priority"
                         : details.taskPriority === "Medium"
@@ -330,10 +330,10 @@ class TaskList extends Component {
                         : "low-priority"
                     }`}
                   >
-                    <div>{details.taskName}</div>
-                    <div>{details.taskDescription}</div>
-                    <div>{details.taskType}</div>
-                    <div>{details.taskPriority}</div>
+                    <h5>{details.taskName}</h5>
+                    <p>{details.taskDescription}</p>
+                    <p><strong>Type:</strong> {details.taskType}</p>
+                    <p><strong>Priority:</strong> {details.taskPriority}</p>
                   </div>
                 ))
               : null}

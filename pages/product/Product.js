@@ -23,7 +23,7 @@ class Product extends Component {
     this.SwalServices = new SwalServices();
     this.dashboardServices = new DashboardServices();
     this.state = {
-      userId : 0,
+      userId: 0,
       productCatagoryOptions: [
         { id: 1, name: "Electronics" },
         { id: 2, name: "Clothing" },
@@ -34,7 +34,7 @@ class Product extends Component {
         ProductCatagoryId: 0,
         searchProduct: "",
       },
-      cartProductCount : 0,
+      cartProductCount: 0,
       productDetailsList: [],
     };
   }
@@ -43,9 +43,9 @@ class Product extends Component {
     let details = getAuthProps();
     if (details != undefined) {
       if (details.userId != undefined && details.userId > 0) {
-        this.setState({ userId : details.userId },() => {
+        this.setState({ userId: details.userId }, () => {
           this.getAllProducts();
-        })
+        });
       } else {
         Navigate(Routes.signIn);
       }
@@ -85,13 +85,13 @@ class Product extends Component {
       request.productCatagory = "";
     }
     request.isAddedToCart = 0;
-    request.userId = this.state.userId
+    request.userId = this.state.userId;
     this.dashboardServices.getAllProducts(request).then((response) => {
       if (response.statusCode === 200 && response.responseItem != null) {
         let details = response.responseItem.responseContent;
 
         let count = details[0].cartProductCount;
-        this.setState({ productDetailsList: details, cartProductCount : count });
+        this.setState({ productDetailsList: details, cartProductCount: count });
       } else {
         this.SwalServices.Error(response.message);
       }
@@ -126,18 +126,23 @@ class Product extends Component {
               />
             </div>
           </div>
-          <button className="prm-blue" onClick={() => Navigate(Routes.Orders)}>
-            <FontAwesomeIcon icon={faBagShopping} />
-            View Orders
-          </button>
-          <button className="prm-blue" onClick={() => Navigate(Routes.Cart)}>
-            <FontAwesomeIcon icon={faBagShopping} />
-            View cart<span className="products-numbers">
-            {this.state.cartProductCount > 0
-                ? this.state.cartProductCount
-                : null}
-            </span>
-          </button>
+          <div className="product-btns">
+            <button
+              className="scn-teal"
+              onClick={() => Navigate(Routes.Orders)}
+            >
+              View Orders
+            </button>
+            <button className="prm-blue" onClick={() => Navigate(Routes.Cart)}>
+              <FontAwesomeIcon icon={faBagShopping} />
+              View cart
+              {this.state.cartProductCount > 0 ? (
+                <span className="products-numbers">
+                  {this.state.cartProductCount}
+                </span>
+              ) : null}
+            </button>
+          </div>
         </div>
         <div className="product-listing">
           {this.state.productDetailsList &&

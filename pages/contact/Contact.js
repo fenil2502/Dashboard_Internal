@@ -136,7 +136,7 @@ class Contact extends Component {
         <div className="form" method="post">
           <div className="name-sec">
             <div className="first-name">
-              <label>First name</label>
+              <label>First name*</label>
               <input
                 type="text"
                 id="first_name"
@@ -149,7 +149,7 @@ class Contact extends Component {
               <ValidationText error={this.state.validState.error.firstName} />
             </div>
             <div className="last-name">
-              <label>Last name</label>
+              <label>Last name*</label>
               <input
                 type="text"
                 id="last_name"
@@ -164,7 +164,7 @@ class Contact extends Component {
           </div>
           <div className="contact-details">
             <div className="phone">
-              <label>Phone number</label>
+              <label>Phone number*</label>
               <input
                 type="tel"
                 id="phone_number"
@@ -177,7 +177,7 @@ class Contact extends Component {
               <ValidationText error={this.state.validState.error.phoneNumber} />
             </div>
             <div className="email">
-              <label>Email</label>
+              <label>Email*</label>
               <input
                 type="email"
                 id="email"
@@ -191,7 +191,7 @@ class Contact extends Component {
             </div>
           </div>
           <div className="message">
-            <label>Message</label>
+            <label>Message*</label>
             <textarea
               id="message"
               name="message"
@@ -203,7 +203,7 @@ class Contact extends Component {
             ></textarea>
             <ValidationText error={this.state.validState.error.message} />
           </div>
-          <div className="w-[50%]">
+          <div className="message-btn">
           {this.state.isLoading === true ? (
             <ButtonLoader />
           ) : (

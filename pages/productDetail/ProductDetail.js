@@ -21,7 +21,7 @@ class ProductDetail extends Component {
     this.dashboardServices = new DashboardServices();
     this.state = {
       userId: 0,
-      productId : 0,
+      productId: 0,
       productDetail: {
         isAddedToCart: false,
         productCategory: "",
@@ -43,15 +43,15 @@ class ProductDetail extends Component {
       if (routeParam) {
         let productId = Number(routeParam);
         if (productId) {
-          this.setState({ productId : productId })
+          this.setState({ productId: productId });
           // this.getProductDetailsByProductId(productId);
         } else {
           Navigate(Routes.signIn);
         }
       }
       if (details.userId != undefined && details.userId > 0) {
-        let userId = details.userId
-        this.setState({ userId: userId },() => {
+        let userId = details.userId;
+        this.setState({ userId: userId }, () => {
           this.getProductDetailsByProductId();
         });
       } else {
@@ -63,16 +63,18 @@ class ProductDetail extends Component {
   }
 
   getProductDetailsByProductId = () => {
-    let request = [this.state.productId, this.state.userId]
-    this.dashboardServices.getProductDetailsByProductId(request).then((response) => {
-      if (response.statusCode === 200 && response.responseItem != null) {
-        let details = response.responseItem.responseContent;
-        this.setState({ productDetail: details });
-      } else {
-        this.swalServices.Error(response.message);
-      }
-      this.setState({ isLoading: false });
-    });
+    let request = [this.state.productId, this.state.userId];
+    this.dashboardServices
+      .getProductDetailsByProductId(request)
+      .then((response) => {
+        if (response.statusCode === 200 && response.responseItem != null) {
+          let details = response.responseItem.responseContent;
+          this.setState({ productDetail: details });
+        } else {
+          this.swalServices.Error(response.message);
+        }
+        this.setState({ isLoading: false });
+      });
   };
 
   addToCartProductById = () => {
@@ -103,11 +105,11 @@ class ProductDetail extends Component {
           <button className="prm-blue" onClick={() => Navigate(Routes.Cart)}>
             <FontAwesomeIcon icon={faBagShopping} />
             View cart
-            <span className="products-numbers">
-              {this.state.productDetail.cartProductCount > 0
-                ? this.state.productDetail.cartProductCount
-                : null}
-            </span>
+            {this.state.cartProductCount > 0 ? (
+              <span className="products-numbers">
+                {this.state.cartProductCount}
+              </span>
+            ) : null}
           </button>
         </div>
         <div className="product-info">

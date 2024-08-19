@@ -103,7 +103,7 @@ class Home extends Component {
                   It&apos;s great to see you here. Let&apos;s dive into what&apos;s new and
                   keep the momentum going.
                 </p>
-                <button className="prm-blue">View Tasks</button>
+                <button className="prm-blue" onClick={() => Navigate(Routes.taskList)}>View Tasks</button>
               </div>
             </div>
             {/* <div className="user-profile">

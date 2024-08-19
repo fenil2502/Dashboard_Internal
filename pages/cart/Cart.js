@@ -356,7 +356,7 @@ class Cart extends Component {
                         </div>
                       </div>
                     ))
-                  : null}
+                  : 'There is not any product in cart'}
               </div>
               <div className="summary-part">
                 <div className="pricing-sec">

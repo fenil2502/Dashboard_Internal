@@ -68,7 +68,7 @@ class Orders extends Component {
 
   render() {
     return (
-      <div className="contactpage">
+      <div className="orderpage">
         <h2>Your Orders</h2>
         <div className="form" method="post">
           {this.state.orderList && this.state.orderList.length > 0
