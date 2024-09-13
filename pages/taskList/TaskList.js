@@ -262,7 +262,7 @@ class TaskList extends Component {
             type="text"
             id="searhTask"
             name="searhTask"
-            placeholder="Searh task"
+            placeholder="Search task"
             value={this.state.searhTask}
             onChange={(event) => this.handleChange(event, "searhTask")}
             autoComplete="off"

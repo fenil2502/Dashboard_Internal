@@ -59,11 +59,11 @@ function Header() {
           <div className="menu-links" onClick={() => Navigate(Routes.taskList)}>
             <FontAwesomeIcon icon={faListCheck} /> Task list
           </div>
-          <div className="menu-links" onClick={() => Navigate(Routes.contact)}>
-            <FontAwesomeIcon icon={faHeadset} /> Contact
-          </div>
           <div className="menu-links" onClick={() => Navigate(Routes.product)}>
             <FontAwesomeIcon icon={faCartShopping} /> Shopping
+          </div>
+          <div className="menu-links" onClick={() => Navigate(Routes.contact)}>
+            <FontAwesomeIcon icon={faHeadset} /> Contact
           </div>
         </div>
         <div className="profile-sec">
@@ -119,17 +119,18 @@ function Header() {
             >
               <FontAwesomeIcon icon={faListCheck} /> Task list
             </div>
-            <div
-              className="mobilemenu-links"
-              onClick={() => Navigate(Routes.contact)}
-            >
-              <FontAwesomeIcon icon={faHeadset} /> Contact
-            </div>
+           
             <div
               className="mobilemenu-links"
               onClick={() => Navigate(Routes.product)}
             >
               <FontAwesomeIcon icon={faCartShopping} /> Shopping
+            </div>
+            <div
+              className="mobilemenu-links"
+              onClick={() => Navigate(Routes.contact)}
+            >
+              <FontAwesomeIcon icon={faHeadset} /> Contact
             </div>
           </div>
           <div className="profile-sec">
