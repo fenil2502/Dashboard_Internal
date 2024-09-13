@@ -917,6 +917,7 @@
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
+    width: fit-content;
   }
 
   .task-btn:hover {
@@ -1064,7 +1065,7 @@
       gap: 20px;
 
       .product-search {
-        width: 300px;
+        width: 260px;
         margin-bottom: 30px;
 
         .search {
@@ -1083,7 +1084,7 @@
 
       .product-catagory {
         height: fit-content;
-        width: 180px;
+        width: 150px;
 
         .btn-dropdown {
           width: 100%;
@@ -1109,6 +1110,7 @@
         gap: 10px;
         align-items: center;
         width: fit-content;
+        line-height: 30px;
 
         svg {
           width: 20px;
@@ -1131,6 +1133,17 @@
         margin-top: 0;
         line-height: 30px;
         margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .product-btns {
+        .scn-teal {
+          width: fit-content;
+        }
+        .prm-blue {
+          width: fit-content;
+        }
       }
     }
   }
@@ -1246,6 +1259,8 @@
 
     .product-img {
       width: 50%;
+      display: grid;
+      place-items: center;
     }
 
     .product-description {
@@ -1722,6 +1737,13 @@ $font-stack: "DM Sans";
         align-items: center;
       }
 
+      @media screen and (max-width: 767px) {
+        .flex {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
       .justify-between {
         justify-content: space-between;
       }
@@ -1735,6 +1757,7 @@ $font-stack: "DM Sans";
         font-size: 0.875rem;
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.2s ease;
+        width: fit-content;
 
         &:hover {
           background-color: darken($primary-color, 10%);
@@ -1848,6 +1871,11 @@ $font-stack: "DM Sans";
     .profile-details {
       width: 100%;
     }
+  }
+
+  .orderpage {
+    margin-left: 0;
+    padding: 20px;
   }
 }
 
