@@ -18,8 +18,8 @@ class SignIn extends Component {
       isButtonLoader: false,
       passwordVisible: false,
       loginDetials: {
-        email: "fenil@gmail.com",
-        password: "Fenil@123",
+        email: "",
+        password: "",
       },
     };
   }
