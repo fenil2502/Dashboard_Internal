@@ -77,7 +77,7 @@ class Orders extends Component {
                   <div className="flex justify-between">
                     <div>
                       <p>Order Date :- {moment(order.createAt).format('DD MMM yyyy')}</p>
-                      <p>Invoice No :- {order.invoiceNO}</p>
+                      <p>Invoice No :- {order.invoiceNo}</p>
                       <p>SubTotal Price :- {order.subTotalAmount}</p>
                       <p>GST Amount :- {order.gstAmount}</p>
                       <p>Total Amount :- {order.totalAmount}</p>
